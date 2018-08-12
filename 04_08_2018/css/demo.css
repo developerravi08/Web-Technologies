@@ -1,0 +1,44 @@
+body {
+    text-align: center;
+}
+/* @import ./font/asd */
+
+.d_font{
+
+}
+
+Demo {
+    font-family: 'Times New Roman', Times, serif
+}
+
+.container {
+    border: 1px solid red;
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 5px 5px 20px 6px #aaa;
+    min-height: 100px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+}
+
+.col-lg-6 {
+    width: 50%;
+    border: 1px solid #000000;
+    min-height: 100px;
+}
+
+.col-lg-12 {
+    min-height: 100px;
+}
+
+.Demo {
+    border: 1px solid red;
+}
+
+#Demo {
+    border: 1px solid green;
+}

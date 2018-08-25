@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <title>Document</title>
+
+    <style>
+        .my-p.my-div {
+            padding: 10px;
+            color: red;
+        }
+
+        p.my-p {
+            padding: 10px;
+            color: yellow;
+        }
+
+        .My-p {
+            color: blue;
+        }
+
+        #myHeader {
+            background-color: lightblue;
+            color: black;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+
+    <script src="js/demo.js"></script>
+</head>
+
+<body>
+
+
+    <h1>HTML Forms </h1>
+
+
+    <form>
+        <div>
+            <input type="text" placeholder="Usre Name" id="userName">
+            <input type="password" placeholder="Password" id="password">
+
+            <input type="button" value="Login" onclick="callLogin()">
+        </div>
+
+    </form>
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <hr>
+    <!-- class -->
+    <h1>class</h1>
+    <div class="my-p">
+        Header
+    </div>
+    <p class="my-p  My-p " onclick="showVal()"> Hello</p>
+    <div class="My-p"> Okay</div>
+
+
+    <div id="myHeader" onclick="shosDataOnID()">
+        Changes base on ID
+    </div>
+    <hr>
+    <h1>iframe</h1>
+    /web_technology/18_08_2018/css/demo.css
+    <!-- <img src="./../picture.jpg"> -->
+
+
+
+    <hr>
+
+
+    <!-- <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p> -->
+
+    <!-- <iframe src="http://www.codekul.com/" height="500" width="100%" style="border:none;" name="iframe_a"></iframe> -->
+
+
+    <hr>
+    <p id="demo"></p>
+
+
+    <script>
+
+        function callLogin() {
+            var userName = document.getElementById('userName').value;
+            var password = document.getElementById('password').value;
+            // console.log('userName', userName, 'password', password);
+
+            var login = {
+                userName: userName,
+                pass: password
+            }
+
+            console.log('Login Obj===>', login);
+            
+
+
+        }
+
+        function showVal() {
+            var value = document.getElementsByClassName('my').value;
+            alert(value);
+
+        }
+
+
+        function shosDataOnID() {
+
+            var msg = document.getElementById('myHeader').innerHTML;
+            console.log('msg', msg)
+            alert('msg', msg);
+
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

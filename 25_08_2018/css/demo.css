@@ -1,0 +1,17 @@
+p {
+    font-size: 14px;
+    color: rebeccapurple;
+}
+
+table.myTable tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table.myTable tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table.myTable th {
+    background-color: black;
+    color: white;
+}

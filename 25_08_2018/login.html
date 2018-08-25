@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login User</title>
+
+    <style>
+        .container {
+            max-width: 1140px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 1px solid #aaaaaa;
+            max-width: 450px;
+            box-shadow: 10px 10px 10px #aaaaaa;
+            margin: 0 auto;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .text-center {
+            text-align: center !important
+        }
+
+        .form-group {
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .form-control {
+            padding: 5px;
+            border: 1px solid #aaaaaa;
+            line-height: 37px;
+            border-radius: 8px;
+            width: 320px;
+        }
+
+        .btn {
+            width: 330px;
+            background-color: #384ada;
+            line-height: 37px;
+            border-radius: 8px;
+
+        }
+
+        ul {
+
+            list-style: none;
+            padding: 10px;
+            margin: 0px;
+            overflow: hidden;
+            border: 1px solid #aaaaaa;
+            clear: both;
+
+        }
+
+        li {
+            float: left;
+            padding: 10px;
+
+        }
+
+        li:hover {
+            background-color: #384ada;
+            color: #ffffff !important;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .col-lg-6 {
+            width: 45%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li> <a href=""> Brand Name</a></li>
+        <li> <a href="">Home</a> </li>
+        <li> <a href="">Home</a> </li>
+        <li> <a href="">Home</a> </li>
+        <li> <a href="">Home</a> </li>
+
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center"> Ragistrations</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="  Name" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User Name" id="userName">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" id="password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="age" id="age">
+                                </div>
+                                <div class=" ">
+
+                                    <input type="radio" name="gender" value="male" checked> Male<br>
+                                    <input type="radio" name="gender" value="female"> Female<br>
+                                    <input type="radio" name="gender" value="other"> Other
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn" value="login" onclick="webLogin()">
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center"> Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User Name" id="userName">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" id="password">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn" value="login" onclick="webLogin()">
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        function webLogin() {
+            var userName = document.getElementById('userName').value;
+            var password = document.getElementById('password').value;
+
+            var login = {
+                user: userName,
+                pass: password
+            }
+
+            console.log('login', login);
+        }
+    </script>
+</body>
+
+</html>

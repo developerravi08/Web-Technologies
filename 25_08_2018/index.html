@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .text-center {
+            text-align: center !important;
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li> Form </li>
+        <li> Form Element</li>
+        <li> Inputs Type</li>
+        <li> Inputs Attributes</li>
+
+        <li> web storage
+            <ul>
+                <li> Local Storage</li>
+                <li> Session Storage </li>
+            </ul>
+        </li>
+
+    </ul>
+
+
+    <h1 class="text-center"> Form </h1>
+
+    The HTML Form element defines a form that is used to collect user input:
+
+
+    <ol>
+        <li> input text</li>
+        <li> input radio </li>
+        <li> input submit </li>
+        <li> input button </li>
+        <li> input reset </li>
+        <li>
+            fieldset
+            <br> legend
+        </li>
+
+
+    </ol>
+    <br> <br>
+    <p>Form Elements</p>
+    <ul>
+        <li>input</li>
+        <li>select</li>
+        <li>textarea</li>
+        <li>button</li>
+        <li>datalist</li>
+        <li>output</li>
+    </ul>
+    <p>HTML Input Types
+    </p>
+    <ul>
+        <li>text</li>
+        <li>password</li>
+        <li> input submit </li>
+        <li> input button </li>
+        <li> input reset </li>
+        <li>Radio</li>
+        <li>checkbox</li>
+
+
+        <ol>
+            <li> HTML5 Input Types</li>
+        </ol>
+    </ul>
+
+    <!-- action="demo.html " target="_blank" method="get/post" -->
+    <input type="text" name=" " id=" " class=" " style="" value="" readonly> <br>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+
+
+    <form>
+        <input type="text" name=" " id=" " class=" " style="" value="" readonly> <br>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+
+        <input type="submit" value="Submit"> ===> action Form Run<br>
+        <input type="button" value="button"> ===> Function Call / Click Event<br>
+        <input type="reset" value="reset"> ===> Form Filed Reset<br>
+
+        <input type="checkbox" name="vehicle2" value="Car"> I have a car <br>
+        <input type="color" name="favcolor"><br>
+        <input type="date" name="bday"><br>
+        <input type="datetime-local" name="bdaytime"><br>
+        <input type="email" name="email">
+        <br> Select a file: <input type="file" name="myFile">
+
+
+        <input type="number" name="quantity"> <br> <input type="search" name="googlesearch">
+
+
+        <br>
+
+
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br>
+        <textarea rows="10" cols="30">
+            In nostrud ex voluptate duis deserunt deserunt nostrud minim ipsum.
+        </textarea>
+        <br>
+
+        <button> button Element </button>
+        <br> <br> <br> <br> <br>
+        <fieldset>
+            <legend>Personal information:</legend>
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey"><br> Last name:<br>
+            <input type="text" name="lastname" value="Mouse"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+
+    </form>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <form>
+        <fieldset>
+            <legend>Personal information:</legend>
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey" id="fname">
+            <br> Last name:<br>
+            <input type="text" name="lastname" value="Mouse" id="lname">
+            <br><br>
+            <input type="button" value="Submit" onclick="webLogin()">
+        </fieldset>
+    </form>
+
+
+
+
+    <script>
+        function webLogin() {
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+
+
+            localStorage.setItem('username', fname);
+
+            var login = {
+                name: fname,
+                laseName: lname
+            }
+
+            console.log('login', login);
+            console.log(' localStorage.getItem==>', localStorage.getItem('username'))
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login User</title>
+
+    <style>
+        .container {
+            max-width: 1140px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 1px solid #aaaaaa;
+            max-width: 450px;
+            box-shadow: 10px 10px 10px #aaaaaa;
+            margin: 0 auto;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .text-center {
+            text-align: center !important
+        }
+
+        .form-group {
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .form-control {
+            padding: 5px;
+            border: 1px solid #aaaaaa;
+            line-height: 37px;
+            border-radius: 8px;
+            width: 320px;
+        }
+
+        .btn {
+            width: 330px;
+            background-color: #384ada;
+            line-height: 37px;
+            border-radius: 8px;
+        }
+
+
+
+        .row {
+            display: flex;
+        }
+
+        .col-lg-6 {
+            width: 45%;
+        }
+
+
+        p.center {
+            text-align: center;
+            color: red;
+        }
+
+        .border {
+            border: 1px solid red;
+
+
+            border-width: 2px 10px 4px 20px;
+            border-style: solid;
+            border-color: green;
+            border-radius: 5px;
+
+        }
+
+        .margin {
+
+            margin: 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+
+
+        }
+
+        .margin-center {
+            margin: 0 auto;
+            width: 100px;
+
+            padding: 10px -10px;
+        }
+
+        .div {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+            min-height: 100px;
+            max-height: 100px;
+            min-width: 100px;
+            max-width: 100px
+        }
+
+        .min-height {
+            min-height: 100px;
+            height: 200px;
+            border: 1px solid red;
+
+
+        }
+
+        .text {
+            text-align: justify;
+            width: 250px;
+
+        }
+
+        a {
+            text-decoration: none;
+            text-decoration: overline;
+            text-decoration: line-through;
+            /* text-decoration: underline; */
+
+        }
+
+        .text-trans {
+            text-transform: capitalize;
+            text-indent: 50px;
+            letter-spacing: 3px;
+            text-shadow: 3px 2px red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href=""> link </a>
+
+    <p class="text">
+        When the text-align property is set to "justify", each line is stretched so that every line has equal width, and the left
+        When the text-align property is set to "justify", each line is stretched so that every line has equal width, and
+        the left When the text-align property is set to "justify", each line is stretched so that every line has equal width,
+        and the left
+
+    </p>
+
+    <h1>
+        CSS
+    </h1>
+    <ul>
+        <li>CSS Introduction </li>
+        <li>CSS Syntax and Selectors </li>
+        <li>CSS How To... (Style Type) </li>
+        <li>Colors Value Use For Properties 1. TextColor ,2 border, 3. background-color
+            <ul>
+                <li>
+                    background color
+                </li>
+                <li>Background Image
+                </li>
+            </ul>
+        </li>
+        <li> CSS Borders </li>
+        <li> CSS Margins </li>
+        <li>CSS Padding </li>
+        <li>CSS Height and Width </li>
+        <li>CSS Text </li>
+    </ul>
+
+
+
+
+    <div class="text-center">
+        <div class="">
+            Okay
+        </div>
+    </div>
+
+    <div class="margin-center">
+        Okay
+    </div>
+
+
+    <div class="min-height">
+        min-height
+    </div>
+
+
+
+
+    <div style="height: 100px; width: 100px; background-color: rebeccapurple">
+
+        background-color
+
+    </div>
+    <div style="height: 500px; width: 1100px;
+    
+    background-image:  url('image/filepath.png') ;background-size: cover; ">
+
+    </div>
+
+
+    <div class="margin">
+
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center"> Ragistrations</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="  Name" id="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User Name" id="UserName">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" id="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="age" id="Age">
+                                </div>
+                                <div class=" " style="text-align: left ;padding:0px 40px">
+                                    <input type="radio" name="gender" value="male" checked> Male<br>
+                                    <input type="radio" name="gender" value="female"> Female<br>
+                                    <input type="radio" name="gender" value="other"> Other
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn" value="login" onclick="webRagistraion()">
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center"> Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User Name" id="userName">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" id="password">
+
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn" value="login" onclick="webLogin()">
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function webRagistraion() {
+
+            var Name = document.getElementById('Name').value;
+            var UserName = document.getElementById('UserName').value;
+            var Age = document.getElementById('Age').value;
+            var Password = document.getElementById('Password').value;
+
+            var selValue = $('input[name=gender]:checked').val();
+
+            // var gender = document.getElementsByName('gender').values;
+            // console.log('gender', selValue);
+
+            var Ragistrations = {
+                Name: Name,
+                UserName: UserName,
+                Password: Password,
+                Age: Age,
+                gender: selValue
+
+            }
+            console.log('Ragistrations : ', Ragistrations)
+
+
+        }
+        function webLogin() {
+            var userName = document.getElementById('userName').value;
+            var password = document.getElementById('password').value;
+            var login = {
+                user: userName,
+                pass: password
+            }
+            console.log('login', login);
+        }
+    </script>
+</body>
+
+</html>

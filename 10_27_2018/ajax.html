@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button onClick="send_with_ajax()">Get Contain</button>
+
+
+    <p id="req_text"></p>
+
+    <script language="javascript" type="text/javascript">
+        //var server = "192.168.61.37";
+        //var server = "ec2-54-201-26-162.us-west-2.compute.amazonaws.com";
+        var server = "ec2-52-36-158-236.us-west-2.compute.amazonaws.com";
+        //var server = "localhost";
+        var protocol = "http://";
+        var appName = "codekul";
+        //var port = "8000";
+        var port = "7878";
+
+        var urlBasic = protocol + server + ":" + port + "/" + appName + "/";
+        var urlGetChatList = protocol + server + ":" + port + "/api/chat/from";
+
+
+        // var newUrl = protocol + server + ":" + port + "/api/inquiry/create";
+        var newUrl = 'http://localhost:5757/api/users/login';
+
+
+
+        var urlSendEnquiry = urlBasic + "enquiry";
+        var urlSendContact = urlBasic + "contact";
+
+        var applicantName = "    	Raviraj";
+        var eMail = "ravi@gmail.com";
+        var mobileNo = "9130451715 "
+        var courses = "['Android ', 'c ']";
+        var fromPage = " 'http://www.codekul.com/index.html'";
+        var tenant = "codekul";
+        var inquiryType = "course";
+        var inquiryTimestamp = 1486645264619;
+        var clientIp = "116.74.218.90";
+
+        var jsonEnquiryForm = {
+            applicantName: applicantName,
+            eMail: eMail,
+            mobileNo: mobileNo,
+            courses: courses,
+            fromPage: fromPage,
+            tenant: tenant,
+            inquiryType: inquiryType,
+            inquiryTimestamp: inquiryTimestamp,
+            clientIp: clientIp
+        };
+
+
+
+        var loginData = {
+
+            credentials: "ravi",
+            password: "123456",
+
+
+        }
+
+        function send_with_ajax() {
+
+            document.getElementById("req_text").innerHTML = "Process Started...";
+            // if (window.XMLHttpRequest || window.ActiveXObject) {
+            //     if (window.ActiveXObject) {
+            //         try {
+            // xhr = new ActiveXObject("Msxml2.XMLHTTP");
+            //         } catch (exception) {
+            //             xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            //         }
+            //     } else {
+            //         xhr = new XMLHttpRequest();
+            //     }
+            // } else {
+            //     alert("Your browser does not support XMLHTTP Request...!");
+            // }
+
+            xhr = new XMLHttpRequest();
+            console.log('xhr', xhr);
+
+            xhr.open('POST', newUrl, true); // Make sure file is in same server
+            // xhr.send(null);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(loginData));
+
+
+            xhr.onload = () => {
+                console.log('xhr', xhr)
+            }
+
+
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState == 4) {
+            //         if (xhr.status == 200) {
+            //             console.log(xhr.statusText);
+            //             document.getElementById("req_text").innerHTML = "Response State : " + xhr.readyState + "Response Text: " + xhr.responseText;
+            //             console.log("Okay");
+            //         } else {
+            //             console.log(xhr.statusText);
+            //             document.getElementById("req_text").innerHTML = "Error Code: " + xhr.status + "Error Message: " + xhr.statusText;
+            //             console.log("Not Okay");
+            //         }
+            //     }
+            // };
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

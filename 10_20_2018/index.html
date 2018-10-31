@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Script</title>
+
+
+
+
+
+</head>
+
+<body>
+
+    <h2>JavaScript Events
+    </h2>
+
+    <button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+
+    <input type="text" onchange="changeValue()" onkeypress="changeValue()" onkeydown="" onkeyup="">
+
+    <button onclick="printDate()"> Show Date</button>
+
+
+    <div id="demo">
+
+
+    </div>
+
+    <input type="file">
+    <h2>JavaScript Strings </h2>
+    <h4>String Length </h4>
+    <h4>Special Characters </h4>
+
+    <script src="js/demo.js"></script>
+    <script>
+        var x = "\'John Doe\'";
+
+        var carname = 'Volvo XC60';
+
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var sln = carname.length;
+        console.log(sln, x);
+        document.getElementById('demo').innerHTML = x + txt;
+
+
+        var NameObj = {
+            username: '',
+            pass: ''
+        }
+
+        function printDate() {
+            console.log('Change Show');
+            // document.getElementById('demo').innerHTML = Date();
+        }
+
+        function changeValue() {
+
+            console.log('Change Show');
+
+            var myNum = 10000;
+            var type = typeof (Infinity);
+            console.log('type', type)
+            while (myNum != Infinity) {
+                myNum = myNum * myNum;
+                console.log('', myNum)
+
+            }
+
+
+
+        }
+
+        scrollCheck()
+
+        function scrollCheck() {
+            console.log('event', )
+
+
+            var txt = "";
+            var numbers = [45, 4, 9, 16, 25];
+
+            numbers.forEach(myFunction);
+
+            document.getElementById("demo").innerHTML = txt;
+
+            function myFunction(asd, ind, val) {
+                console.log('index', ind)
+                console.log('array', asd)
+                console.log('array', val)
+                // txt = txt + value + "<br>";
+
+                // if (value === 4) {
+                //     txt = txt + value + "<br>";
+                // }
+                // if (value === 25) {
+                //     txt = txt + value + "<br>";
+                // }
+
+            }
+
+            // numbers.forEach(element => {
+            //     console.log('element', element);
+            // });
+
+            // for (var i = 0; i < numbers.length; i++) {
+            //     console.log('i', numbers[i]);
+
+            // }
+
+
+        }
+    </script>
+
+
+    <!-- ass -->
+    1. button
+    2. Input
+
+
+
+
+</body>
+
+</html>

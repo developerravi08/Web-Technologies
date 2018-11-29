@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <button class="btn btn-primary" onClick="send_with_ajax()">Get Contain</button>
+    <button class="btn btn-primary" onClick="newCallAjax()">Get Ajax</button>
+
+
+    <p id="req_text"></p>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script language="javascript" type="text/javascript">
+        //var server = "192.168.61.37";
+        //var server = "ec2-54-201-26-162.us-west-2.compute.amazonaws.com";
+        var server = "ec2-52-36-158-236.us-west-2.compute.amazonaws.com";
+        //var server = "localhost";
+        var protocol = "http://";
+        var appName = "codekul";
+        //var port = "8000";
+        var port = "7878";
+
+        var urlBasic = protocol + server + ":" + port + "/" + appName + "/";
+        var urlGetChatList = protocol + server + ":" + port + "/api/chat/from";
+
+
+        // var newUrl = protocol + server + ":" + port + "/api/inquiry/create";
+        var newUrl = 'http://localhost:5757/api/users/login';
+
+
+
+        var urlSendEnquiry = urlBasic + "enquiry";
+        var urlSendContact = urlBasic + "contact";
+
+        var applicantName = "    	Raviraj";
+        var eMail = "ravi@gmail.com";
+        var mobileNo = "9130451715 "
+        var courses = "['Android ', 'c ']";
+        var fromPage = " 'http://www.codekul.com/index.html'";
+        var tenant = "codekul";
+        var inquiryType = "course";
+        var inquiryTimestamp = 1486645264619;
+        var clientIp = "116.74.218.90";
+
+        var jsonEnquiryForm = {
+            applicantName: applicantName,
+            eMail: eMail,
+            mobileNo: mobileNo,
+            courses: courses,
+            fromPage: fromPage,
+            tenant: tenant,
+            inquiryType: inquiryType,
+            inquiryTimestamp: inquiryTimestamp,
+            clientIp: clientIp
+        };
+
+
+
+        var loginData = {
+
+            credentials: "ravi",
+            password: "123456",
+
+
+        }
+
+        function send_with_ajax() {
+
+            document.getElementById("req_text").innerHTML = "Process Started...";
+            if (window.XMLHttpRequest || window.ActiveXObject) {
+                if (window.ActiveXObject) {
+                    try {
+                        xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                    } catch (exception) {
+                        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                } else {
+                    xhr = new XMLHttpRequest();
+                }
+            } else {
+                alert("Your browser does not support XMLHTTP Request...!");
+            }
+
+            console.log('xhr', xhr);
+
+            xhr.open('POST', newUrl, true); // Make sure file is in same server
+            // xhr.send(null);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(loginData));
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        console.log(xhr.statusText);
+                        document.getElementById("req_text").innerHTML = "Response State : " + xhr.readyState + "Response Text: " + xhr.responseText;
+                        console.log("Okay");
+                    } else {
+                        console.log(xhr.statusText);
+                        document.getElementById("req_text").innerHTML = "Error Code: " + xhr.status + "Error Message: " + xhr.statusText;
+                        console.log("Not Okay");
+                    }
+                }
+            };
+
+        }
+
+
+
+
+        function newCallAjax() {
+
+            $.ajax({
+                type: "POST",
+                beforeSend: function (request) {
+                    request.setRequestHeader('Content-Type', 'application/json');
+                },
+                url: newUrl,
+                data: JSON.stringify(loginData),
+                processData: false,
+                success: function (msg) {
+                    console.log(msg);
+                    // $("#results").append("The result =" + StringifyPretty(msg));
+                }
+            });
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
